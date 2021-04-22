@@ -1,8 +1,10 @@
 package edu.lib.model;
 
 import com.sun.istack.NotNull;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Book {
@@ -32,4 +34,8 @@ public class Book {
     @NotNull
     @ManyToOne(fetch = FetchType.EAGER)
     private Publisher publisher;
+
+    @Temporal(TemporalType.DATE)
+    @CreationTimestamp
+    private Date yearOfPublication;
 }

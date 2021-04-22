@@ -5,6 +5,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Publisher {
@@ -16,7 +17,8 @@ public class Publisher {
     @NotNull
     private String name;
 
-    @Temporal(TemporalType.DATE)
-    @CreationTimestamp
-    private Date yearOfPublication;
+    @OneToMany
+    private List<Book> books;
+
+
 }
