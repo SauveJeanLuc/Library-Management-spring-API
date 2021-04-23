@@ -1,5 +1,6 @@
 package edu.lib.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 import javax.persistence.Entity;
@@ -15,6 +16,10 @@ public class Staff {
     private Long id;
 
     @NotNull
-    private String name;
+    @JsonIgnore
+    private String userName;
+
+    @JsonIgnore
+    private String password;
 
 }
