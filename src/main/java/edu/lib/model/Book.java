@@ -11,7 +11,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String ISBN;
 
     @NotNull
     private Float price;
@@ -24,9 +24,6 @@ public class Book {
 
     @NotNull
     private String title;
-
-    @NotNull
-    private String ISBN;
 
     @NotNull
     private String AuthNo;
