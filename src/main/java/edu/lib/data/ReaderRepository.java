@@ -1,22 +1,25 @@
 package edu.lib.data;
 
-import edu.lib.model.Book;
+import edu.lib.model.Reader;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface ReaderRepository {
+public interface ReaderRepository extends JpaRepository<Reader,Long> {
 
     // Possible methods to be required for finding
     //-Find those whose title contains a given string in it
-    List<Book> findByTitleContaining(String titlePortion);
+    List<Reader> findById(String titlePortion);
     //Find By title
-    List<Book> findByTitle(String title);
+    List<Reader> findByEmail(String email);
     //-Find books by auth no
-    List<Book> findByAuthNo(String authNo);
+    List<Reader> findByFirstName(String firstName);
     //-Find book by ISBN
-    List<Book> findByISBN(String ISBN);
+    List<Reader> findByLastName(String lastName);
     //-Find books by Category
-    List<Book> findByCategory(String category);
-    //-Find books by price range
-    List<Book> findByPriceBetween(Float price1, Float price2);
+    List<Reader> findByPhoneNum(String phoneNumber);
+
+    //-Delete book if title contains a string passed in it
+    void deleteById(Long id);
+
 }
