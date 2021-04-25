@@ -23,11 +23,11 @@ public interface PublisherRepository extends JpaRepository<Publisher, Long> {
     // Possible methods to be required for deleting
 
     //-Delete book if title contains a string passed in it
-    List<Publisher> deleteById(String titlePortion);
+    void deleteById(Long id);
     //-Delete by title
-    List<Publisher> deleteByName(String name);
+    void deleteByName(String name);
     //-Delete books by author number
-    List<Publisher> deleteByAuthNo(String authNo);
+    void deleteByAuthNo(String authNo);
 
 
 
