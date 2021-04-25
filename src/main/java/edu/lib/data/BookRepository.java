@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface BookRepository extends JpaRepository<Book, String> {
     // Possible methods to be required for finding
-    //-Find if title contains a string in it
+    //-Find those whose title contains a given string in it
     List<Book> findByTitleContaining(String titlePortion);
     //Find By title
     List<Book> findByTitle(String title);
