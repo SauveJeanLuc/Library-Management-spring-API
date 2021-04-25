@@ -29,6 +29,4 @@ public interface PublisherRepository extends JpaRepository<Publisher, Long> {
     //-Delete books by author number
     void deleteByAuthNo(String authNo);
 
-
-
 }
