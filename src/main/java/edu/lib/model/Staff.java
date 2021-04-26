@@ -24,12 +24,21 @@ public class Staff {
     @JsonIgnore
     private String password;
 
-    //First Constructor
+    //No-arg Constructor
 
-    //Second Constructor
+    public Staff(){
+        super();
+    }
+
+    //All-arg(/Id) Constructor
+
+    public Staff(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
+
 
     //Getters and Setters
-
 
     public Long getId() {
         return id;
@@ -57,5 +66,15 @@ public class Staff {
 
     //Override equals
 
+    @Override
+    public boolean equals(Object obj){
+        if(!(obj instanceof Staff))
+            return false;
+        Staff otherStaff = (Staff) obj;
+
+        return this.id.equals(otherStaff.getId())&&
+                this.userName.equals(otherStaff.getUserName())&&
+                this.password.equals(otherStaff.getUserName());
+    }
 
 }
