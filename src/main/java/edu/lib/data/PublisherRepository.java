@@ -26,7 +26,4 @@ public interface PublisherRepository extends JpaRepository<Publisher, Long> {
     void deleteById(Long id);
     //-Delete by title
     void deleteByName(String name);
-    //-Delete books by author number
-    void deleteByAuthNo(String authNo);
-
 }
